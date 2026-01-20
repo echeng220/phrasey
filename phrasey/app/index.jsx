@@ -1,12 +1,30 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import { Link } from 'expo-router'
 
+import { useDatabase } from "../hooks/useDatabase";
+
 import ThemedView from '../components/ThemedView'
 import ThemedText from '../components/ThemedText'
 import ThemedLogo from '../components/ThemedLogo'
+import ThemedLoader from '../components/ThemedLoader';
 import Spacer from '../components/Spacer'
 
 const Home = () => {
+  const dbReady = useDatabase();
+
+   if (!dbReady) {
+    return (
+      <ThemedView style={styles.container}>
+        <ThemedLogo />
+        <Spacer height={20}/>
+        <ThemedText>Loading offline language data…</ThemedText>
+        <Spacer />
+        <ThemedLoader />
+
+      </ThemedView>
+    )
+  }
+
   return (
     <ThemedView style={styles.container}>
         <ThemedLogo />
@@ -15,9 +33,6 @@ const Home = () => {
       <Spacer />
       <ThemedText>Get ready to learn!</ThemedText>
 
-      <Link href='/about' style={styles.link}>
-        <ThemedText>About Page</ThemedText>
-      </Link>
       <Link href='/login' style={styles.link}>
         <ThemedText>Login</ThemedText>
       </Link>

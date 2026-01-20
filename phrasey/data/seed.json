@@ -1,0 +1,188 @@
+{
+  "categories": [
+    { "id": 1, "key": "FOOD", "displayName": "Food & Drinks", "icon": "fast-food" },
+    { "id": 2, "key": "TRANSPORT", "displayName": "Transportation", "icon": "bus" },
+    { "id": 3, "key": "DIRECTIONS", "displayName": "Directions & Navigation", "icon": "map" },
+    { "id": 4, "key": "SHOPPING", "displayName": "Shopping & Payments", "icon": "cart" },
+    { "id": 5, "key": "ACCOMMODATION", "displayName": "Accommodation", "icon": "bed" }
+  ],
+
+  "intents": [
+    { "id": 1, "key": "REQUEST_ITEM", "description": "Request an item or service" },
+    { "id": 2, "key": "ASK_PLACE", "description": "Ask where something is" },
+    { "id": 3, "key": "ASK_PRICE", "description": "Ask the price" },
+    { "id": 4, "key": "ASK_MEANING", "description": "Ask what something is" },
+    { "id": 5, "key": "ASK_AVAILABILITY", "description": "Ask if something is available" },
+    { "id": 6, "key": "ASK_HELP", "description": "Ask for help" },
+    { "id": 7, "key": "ASK_TIME", "description": "Ask about time or schedule" },
+    { "id": 8, "key": "CONFIRM", "description": "Confirm information" },
+    { "id": 9, "key": "REQUEST_DIRECTION", "description": "Ask how to get somewhere" },
+    { "id": 10, "key": "EXPRESS_PROBLEM", "description": "Explain a problem" }
+  ],
+
+  "languages": [
+    { "id": 1, "code": "us", "name": "English", "nativeName": "English" },
+    { "id": 2, "code": "de", "name": "German", "nativeName": "Deutsch" },
+    { "id": 3, "code": "cn", "name": "Chinese", "nativeName": "中文" }
+  ],
+
+  "sentence_frames": [
+    {
+      "id": 1,
+      "intentId": 1,
+      "language": "us",
+      "template": "I would like {thing}",
+      "pronunciation": "eye would like {thing}"
+    },
+    {
+      "id": 2,
+      "intentId": 1,
+      "language": "de",
+      "template": "Ich möchte {thing}",
+      "pronunciation": "ikh MERK-te {thing}"
+    },
+    {
+      "id": 3,
+      "intentId": 1,
+      "language": "cn",
+      "template": "我想要 {thing}",
+      "pronunciation": "wǒ xiǎng yào {thing}"
+    },
+
+    {
+      "id": 4,
+      "intentId": 2,
+      "language": "us",
+      "template": "Where is {place}?",
+      "pronunciation": "wair iz {place}"
+    },
+    {
+      "id": 5,
+      "intentId": 2,
+      "language": "de",
+      "template": "Wo ist {place}?",
+      "pronunciation": "voh ist {place}"
+    },
+    {
+      "id": 6,
+      "intentId": 2,
+      "language": "cn",
+      "template": "{place} 在哪里？",
+      "pronunciation": "{place} 在哪里？"
+    },
+
+    {
+      "id": 7,
+      "intentId": 3,
+      "language": "us",
+      "template": "How much is {thing}?",
+      "pronunciation": "how much iz {thing}"
+    },
+    {
+      "id": 8,
+      "intentId": 3,
+      "language": "de",
+      "template": "Wie viel kostet {thing}?",
+      "pronunciation": "vee feel KOSS-tet {thing}"
+    },
+    {
+      "id": 9,
+      "intentId": 3,
+      "language": "cn",
+      "template": "{thing} 多少钱？",
+      "pronunciation": "{thing} duō shǎo qián"
+    }
+  ],
+
+  "frame_slots": [
+    { "id": 1, "intentId": 1, "slotKey": "thing" },
+    { "id": 2, "intentId": 2, "slotKey": "place" },
+    { "id": 3, "intentId": 3, "slotKey": "thing" }
+  ],
+
+  "slot_vocabulary": [
+    { "slotId": 1, "vocabId": 1 },
+    { "slotId": 1, "vocabId": 2 },
+    { "slotId": 2, "vocabId": 3 },
+    { "slotId": 3, "vocabId": 1 },
+    { "slotId": 3, "vocabId": 2 }
+  ],
+
+  "vocabulary": [
+    {
+      "id": 1,
+      "language": "us",
+      "slotKey": "thing",
+      "text": "coffee",
+      "pronunciation": "KAW-fee"
+    },
+    {
+      "id": 2,
+      "language": "us",
+      "slotKey": "thing",
+      "text": "ticket",
+      "pronunciation": "TIK-it"
+    },
+    {
+      "id": 3,
+      "language": "us",
+      "slotKey": "place",
+      "text": "bathroom",
+      "pronunciation": "BATH-room"
+    },
+
+    {
+      "id": 4,
+      "language": "de",
+      "slotKey": "thing",
+      "text": "Kaffee",
+      "pronunciation": "KAH-feh"
+    },
+    {
+      "id": 5,
+      "language": "de",
+      "slotKey": "thing",
+      "text": "Ticket",
+      "pronunciation": "TIK-et"
+    },
+    {
+      "id": 6,
+      "language": "de",
+      "slotKey": "place",
+      "text": "Toilette",
+      "pronunciation": "toy-LET-teh"
+    },
+
+    {
+      "id": 7,
+      "language": "cn",
+      "slotKey": "thing",
+      "text": "咖啡",
+      "pronunciation": "kā fēi"
+    },
+    {
+      "id": 8,
+      "language": "cn",
+      "slotKey": "thing",
+      "text": "票",
+      "pronunciation": "piào"
+    },
+    {
+      "id": 9,
+      "language": "cn",
+      "slotKey": "place",
+      "text": "洗手间",
+      "pronunciation": "xǐ shǒu jiān"
+    }
+  ],
+
+  "categoryIntents": [
+    { "categoryId": 1, "intentId": 1 },
+    { "categoryId": 1, "intentId": 3 },
+    { "categoryId": 2, "intentId": 3 },
+    { "categoryId": 3, "intentId": 2 },
+    { "categoryId": 3, "intentId": 9 },
+    { "categoryId": 4, "intentId": 3 },
+    { "categoryId": 5, "intentId": 1 }
+  ]
+}
