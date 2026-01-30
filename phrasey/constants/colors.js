@@ -20,4 +20,10 @@ export const Colors = {
     iconColorFocused: "#201e2b",
     uiBackground: "#d6d5e1",
   },
+
+  person: "#6849a7",
+  place: "#49a768",
+  thing: "#a76849",
+  question: "#a74968",
+  action: "#4968a7"
 }

@@ -1,0 +1,43 @@
+{
+  "id": "hk_directions",
+  "language": "hk",
+  "category": "DIRECTIONS",
+
+  "intents": [2, 9],
+
+  "sentence_frames": [
+    {
+      "id": "hk_dir_1",
+      "intentId": 2,
+      "template": "{place} 喺邊度？",
+      "pronunciation": "{place} hai2 bin1 dou6?",
+      "translation": "Where is {place}?",
+      "audioRef": "hk/directions/sentences/where_is"
+    },
+    {
+      "id": "hk_dir_2",
+      "intentId": 9,
+      "template": "點去 {place}？",
+      "pronunciation": "dim2 heoi3 {place}?",
+      "translation": "How do I get to {place}?",
+      "audioRef": "hk/directions/sentences/how_get"
+    }
+  ],
+
+  "vocabulary": [
+    {
+      "slotKey": "place",
+      "text": "洗手間",
+      "pronunciation": "sai2 sau2 gaan1",
+      "englishMeaning": "bathroom",
+      "audioRef": "hk/directions/vocab/bathroom"
+    },
+    {
+      "slotKey": "place",
+      "text": "地鐵站",
+      "pronunciation": "dei6 tit3 zaam6",
+      "englishMeaning": "subway station",
+      "audioRef": "hk/directions/vocab/subway"
+    }
+  ]
+}

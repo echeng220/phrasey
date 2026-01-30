@@ -1,0 +1,43 @@
+{
+  "id": "de_directions",
+  "language": "de",
+  "category": "DIRECTIONS",
+
+  "intents": [2, 9],
+
+  "sentence_frames": [
+    {
+      "id": "de_dir_1",
+      "intentId": 2,
+      "template": "Wo ist {place}?",
+      "pronunciation": "voh ist {place}",
+      "translation": "Where is {place}?",
+      "audioRef": "de/directions/sentences/where_is"
+    },
+    {
+      "id": "de_dir_2",
+      "intentId": 9,
+      "template": "Wie komme ich zu {place}?",
+      "pronunciation": "vee KOM-me ikh tsoo {place}",
+      "translation": "How do I get to {place}?",
+      "audioRef": "de/directions/sentences/how_get"
+    }
+  ],
+
+  "vocabulary": [
+    {
+      "slotKey": "place",
+      "text": "Bahnhof",
+      "pronunciation": "BAHN-hof",
+      "englishMeaning": "train station",
+      "audioRef": "de/directions/vocab/station"
+    },
+    {
+      "slotKey": "place",
+      "text": "Toilette",
+      "pronunciation": "toy-LET-teh",
+      "englishMeaning": "bathroom",
+      "audioRef": "de/directions/vocab/bathroom"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import seed from "../data/seed.json";
+import seed from "../data/seed/seed.json";
 import { executeSql } from "./database";
 
 export const seedDatabase = async () => {

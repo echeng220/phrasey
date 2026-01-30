@@ -1,6 +1,7 @@
 import { FlatList, Pressable, StyleSheet } from 'react-native'
 import { useRouter } from 'expo-router'
 import CountryFlag from 'react-native-country-flag'
+import { useEffect, useState } from 'react'
 
 
 import { useLearn } from '../../hooks/useLearn'
@@ -11,7 +12,7 @@ import ThemedCard from '../../components/ThemedCard'
 import ThemedText from "../../components/ThemedText"
 import ThemedView from "../../components/ThemedView"
 
-import seed from "../../data/seed.json";
+import seed from "../../data/seed/seed.json";
 
 const Learn = () => {
   const { language, setLanguage } = useLearn()
@@ -29,9 +30,6 @@ const Learn = () => {
     <ThemedView style={styles.container} safe={true}>
 
       <Spacer />
-      {/* <ThemedText title={true} style={styles.heading}>
-        Learn
-      </ThemedText> */}
 
       <Spacer />
       <FlatList

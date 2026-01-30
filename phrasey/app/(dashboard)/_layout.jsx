@@ -6,16 +6,10 @@ import CountryFlag from 'react-native-country-flag'
 import { useUser } from "../../hooks/useUser"
 import { useLearn } from "../../hooks/useLearn"
 import { useRouter } from "expo-router"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { loadPackState } from "../../storage/loadPackState"
 
 import ThemedText from "../../components/ThemedText"
-
-// Flag emoji map for language codes
-const flagMap = {
-  "us": "🇺🇸",
-  "de": "🇩🇪",
-  "cn": "🇨🇳",
-}
 
 export default function DashboardLayout() {
     const colorScheme = useColorScheme()
@@ -23,6 +17,7 @@ export default function DashboardLayout() {
     const { user, authChecked } = useUser()
     const { language } = useLearn()
     const router = useRouter()
+    const [freeUnlocks, setFreeUnlocks] = useState({})
 
     useEffect(() => {
       if (authChecked && user === null) {
@@ -30,23 +25,41 @@ export default function DashboardLayout() {
       }
     }, [user, authChecked])
 
+    useEffect(() => {
+      const loadUnlocks = async () => {
+        const { freeUnlocks } = await loadPackState();
+        setFreeUnlocks(freeUnlocks);
+      }
+      loadUnlocks();
+    }, [])
+
     if (!authChecked) {
       return null
     }
 
     const FlagButton = () => (
-    <Pressable 
-        onPress={() => router.push('/learn')}
-        style={{ marginRight: 15 }}
-    >
-        <CountryFlag isoCode={language} size={25} style={{ borderRadius: 5 }}/>
-    </Pressable>
-)
+      <Pressable 
+          onPress={() => router.push('/learn')}
+          style={{ marginRight: 15, flexDirection: 'row', alignItems: 'center', gap: 8 }}
+      >
+          <CountryFlag isoCode={language} size={25} style={{ borderRadius: 5 }}/>
+      </Pressable>
+    )
+
+    const BackButton = () => (
+      <Pressable 
+          onPress={() => router.back()}
+          style={{ marginLeft: 15 }}
+      >
+          <Ionicons name="chevron-back" size={24} color={theme.title} />
+      </Pressable>
+    )
 
     return (
         <Tabs 
                 screenOptions={{ 
                     headerTitleStyle: {display: 'none'},
+                    headerLeft: () => <BackButton />,
                     headerRight: () => <FlagButton />,
                     tabBarStyle: {
                         backgroundColor: theme.navBackground,
@@ -62,20 +75,20 @@ export default function DashboardLayout() {
                         tabBarIcon: ({ focused }) => (
                             <Ionicons
                                 size={24}
-                                name={ focused ? 'book' : 'book-outline'}
+                                name={ focused ? 'language' : 'language-outline'}
                                 color={ focused ? theme.iconColorFocused : theme.iconColor }
                             />
                         )
                     ,}}
                 />
                 <Tabs.Screen 
-                    name='create' 
+                    name='vocab' 
                     options={{
-                        title: 'Create',
+                        title: 'Vocab',
                         tabBarIcon: ({ focused }) => (
                             <Ionicons
                                 size={24}
-                                name={ focused ? 'create' : 'create-outline'}
+                                name={ focused ? 'book' : 'book-outline'}
                                 color={ focused ? theme.iconColorFocused : theme.iconColor }
                             />
                         )
@@ -95,14 +108,6 @@ export default function DashboardLayout() {
                     }}
                 />
                 <Tabs.Screen
-                    name="books"
-                    options={{ href: null }}
-                ></Tabs.Screen>
-                <Tabs.Screen
-                    name="books/[id]"
-                    options={{ href: null }}
-                ></Tabs.Screen>
-                <Tabs.Screen
                     name="learn/[language]"
                     options={{ href: null }}
                 ></Tabs.Screen>
@@ -112,6 +117,10 @@ export default function DashboardLayout() {
                 ></Tabs.Screen>
                 <Tabs.Screen
                     name="learn/[language]/[intent]/[frame]"
+                    options={{ href: null }}
+                ></Tabs.Screen>
+                <Tabs.Screen
+                    name="purchase"
                     options={{ href: null }}
                 ></Tabs.Screen>
             </Tabs>

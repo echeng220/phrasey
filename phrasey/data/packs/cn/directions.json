@@ -1,0 +1,36 @@
+{
+  "id": "cn_directions",
+  "language": "cn",
+  "category": "DIRECTIONS",
+
+  "intents": [2, 9],
+
+  "sentence_frames": [
+    {
+      "id": "cn_dir_1",
+      "intentId": 2,
+      "template": "{place} 在哪里？",
+      "pronunciation": "{place} zài nǎ li?",
+      "translation": "Where is {place}?",
+      "breakdown": [
+        { "text": "在", "meaning": "located at" },
+        { "text": "哪里", "meaning": "where" }
+      ]
+    }
+  ],
+
+  "vocabulary": [
+    {
+      "slotKey": "place",
+      "text": "洗手间",
+      "pronunciation": "xǐ shǒu jiān",
+      "englishMeaning": "bathroom"
+    },
+    {
+      "slotKey": "place",
+      "text": "地铁站",
+      "pronunciation": "dì tiě zhàn",
+      "englishMeaning": "subway station"
+    }
+  ]
+}

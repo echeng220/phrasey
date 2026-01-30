@@ -1,26 +1,37 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
-import { Link } from 'expo-router'
+import { StyleSheet } from 'react-native'
+import { useEffect, useState } from 'react';
+import { Link, useRouter } from 'expo-router'
+import Purchases from 'react-native-purchases';
 
 import { useDatabase } from "../hooks/useDatabase";
+import { useUser } from '../hooks/useUser';
+import UnlockManager from '../storage/UnlockManager';
 
 import ThemedView from '../components/ThemedView'
 import ThemedText from '../components/ThemedText'
 import ThemedLogo from '../components/ThemedLogo'
-import ThemedLoader from '../components/ThemedLoader';
 import Spacer from '../components/Spacer'
 
 const Home = () => {
   const dbReady = useDatabase();
+  const { user, authChecked } = useUser();
+  const router = useRouter()
+
+  useEffect(() => {
+    UnlockManager.initialize()
+    // UnlockManager.resetAll()
+
+    if (authChecked && user) {
+      router.replace('/learn')
+    }
+  }, [user, authChecked])
+
 
    if (!dbReady) {
     return (
       <ThemedView style={styles.container}>
         <ThemedLogo />
-        <Spacer height={20}/>
         <ThemedText>Loading offline language data…</ThemedText>
-        <Spacer />
-        <ThemedLoader />
-
       </ThemedView>
     )
   }
@@ -29,19 +40,6 @@ const Home = () => {
     <ThemedView style={styles.container}>
         <ThemedLogo />
         <Spacer height={20}/>
-      <ThemedText style={styles.title} title={true}>Travel Language Learning App</ThemedText>
-      <Spacer />
-      <ThemedText>Get ready to learn!</ThemedText>
-
-      <Link href='/login' style={styles.link}>
-        <ThemedText>Login</ThemedText>
-      </Link>
-      <Link href='/register' style={styles.link}>
-        <ThemedText>Register</ThemedText>
-      </Link>
-      <Link href='/profile' style={styles.link}>
-        <ThemedText>Profile</ThemedText>
-      </Link>
     </ThemedView>
   )
 }

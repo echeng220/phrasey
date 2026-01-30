@@ -1,0 +1,43 @@
+{
+  "id": "hk_food",
+  "language": "hk",
+  "category": "FOOD",
+
+  "intents": [1, 3],
+
+  "sentence_frames": [
+    {
+      "id": "hk_food_1",
+      "intentId": 1,
+      "template": "我想要 {thing}",
+      "pronunciation": "ngo5 soeng2 jiu3 {thing}",
+      "translation": "I would like {thing}",
+      "audioRef": "hk/food/sentences/i_want"
+    },
+    {
+      "id": "hk_food_2",
+      "intentId": 3,
+      "template": "{thing} 幾錢？",
+      "pronunciation": "{thing} gei2 cin2?",
+      "translation": "How much is {thing}?",
+      "audioRef": "hk/food/sentences/how_much"
+    }
+  ],
+
+  "vocabulary": [
+    {
+      "slotKey": "thing",
+      "text": "咖啡",
+      "pronunciation": "gaa3 fe1",
+      "englishMeaning": "coffee",
+      "audioRef": "hk/food/vocab/coffee"
+    },
+    {
+      "slotKey": "thing",
+      "text": "叉燒飯",
+      "pronunciation": "caa1 siu1 faan6",
+      "englishMeaning": "BBQ pork rice",
+      "audioRef": "hk/food/vocab/char_siu_rice"
+    }
+  ]
+}

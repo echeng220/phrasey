@@ -1,0 +1,48 @@
+{
+  "id": "cn_food",
+  "language": "cn",
+  "category": "FOOD",
+
+  "intents": [1, 3],
+
+  "sentence_frames": [
+    {
+      "id": "cn_food_1",
+      "intentId": 1,
+      "template": "我想要 {thing}",
+      "pronunciation": "wǒ xiǎng yào {thing}",
+      "translation": "I would like {thing}",
+      "breakdown": [
+        { "text": "我", "meaning": "I" },
+        { "text": "想", "meaning": "want" },
+        { "text": "要", "meaning": "need" }
+      ]
+    },
+    {
+      "id": "cn_food_2",
+      "intentId": 3,
+      "template": "{thing} 多少钱？",
+      "pronunciation": "{thing} duō shǎo qián?",
+      "translation": "How much is {thing}?",
+      "breakdown": [
+        { "text": "多少", "meaning": "how much" },
+        { "text": "钱", "meaning": "money" }
+      ]
+    }
+  ],
+
+  "vocabulary": [
+    {
+      "slotKey": "thing",
+      "text": "咖啡",
+      "pronunciation": "kā fēi",
+      "englishMeaning": "coffee"
+    },
+    {
+      "slotKey": "thing",
+      "text": "茶",
+      "pronunciation": "chá",
+      "englishMeaning": "tea"
+    }
+  ]
+}

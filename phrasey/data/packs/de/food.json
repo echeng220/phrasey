@@ -1,0 +1,43 @@
+{
+  "id": "de_food",
+  "language": "de",
+  "category": "FOOD",
+
+  "intents": [1, 3],
+
+  "sentence_frames": [
+    {
+      "id": "de_food_1",
+      "intentId": 1,
+      "template": "Ich möchte {thing}",
+      "pronunciation": "ikh MERKH-te {thing}",
+      "translation": "I would like {thing}",
+      "breakdown": [
+        { "text": "Ich", "meaning": "I" },
+        { "text": "möchte", "meaning": "would like" }
+      ]
+    },
+    {
+      "id": "de_food_2",
+      "intentId": 3,
+      "template": "Wie viel kostet {thing}?",
+      "pronunciation": "vee feel KOSS-tet {thing}",
+      "translation": "How much is {thing}?"
+    }
+  ],
+
+  "vocabulary": [
+    {
+      "slotKey": "thing",
+      "text": "Kaffee",
+      "pronunciation": "KAH-feh",
+      "englishMeaning": "coffee"
+    },
+    {
+      "slotKey": "thing",
+      "text": "Bier",
+      "pronunciation": "beer",
+      "englishMeaning": "beer"
+    }
+  ]
+}

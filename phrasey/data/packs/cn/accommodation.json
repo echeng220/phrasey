@@ -1,0 +1,65 @@
+{
+  "id": "cn_accommodation",
+  "language": "cn",
+  "category": "ACCOMMODATION",
+
+  "intents": [1, 5, 10],
+
+  "sentence_frames": [
+    {
+      "id": "cn_acc_1",
+      "intentId": 1,
+      "template": "我有预订",
+      "pronunciation": "wǒ yǒu yù dìng",
+      "translation": "I have a reservation",
+      "audioRef": "cn/accommodation/sentences/reservation",
+      "breakdown": [
+        { "text": "我", "meaning": "I" },
+        { "text": "有", "meaning": "have" },
+        { "text": "预订", "meaning": "reservation" }
+      ]
+    },
+    {
+      "id": "cn_acc_2",
+      "intentId": 5,
+      "template": "有空房吗？",
+      "pronunciation": "yǒu kòng fáng ma?",
+      "translation": "Is there a room available?",
+      "audioRef": "cn/accommodation/sentences/available",
+      "breakdown": [
+        { "text": "有", "meaning": "is there" },
+        { "text": "空房", "meaning": "available room" }
+      ]
+    },
+    {
+      "id": "cn_acc_3",
+      "intentId": 10,
+      "template": "房间有问题",
+      "pronunciation": "fáng jiān yǒu wèn tí",
+      "translation": "There is a problem with the room",
+      "audioRef": "cn/accommodation/sentences/problem",
+      "breakdown": [
+        { "text": "房间", "meaning": "room" },
+        { "text": "有", "meaning": "has" },
+        { "text": "问题", "meaning": "problem" }
+      ]
+    }
+  ],
+
+  "vocabulary": [
+    {
+      "slotKey": "thing",
+      "text": "房间",
+      "pronunciation": "fáng jiān",
+      "englishMeaning": "room",
+      "audioRef": "cn/accommodation/vocab/room"
+    },
+    {
+      "slotKey": "thing",
+      "text": "钥匙",
+      "pronunciation": "yào shi",
+      "englishMeaning": "key",
+      "audioRef": "cn/accommodation/vocab/key"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "de_accommodation",
+  "language": "de",
+  "category": "ACCOMMODATION",
+
+  "intents": [1, 10],
+
+  "sentence_frames": [
+    {
+      "id": "de_acc_1",
+      "intentId": 1,
+      "template": "Ich habe eine Reservierung",
+      "pronunciation": "ikh HAH-beh EYE-neh reh-zeh-veer-OONG",
+      "translation": "I have a reservation"
+    },
+    {
+      "id": "de_acc_2",
+      "intentId": 10,
+      "template": "Es gibt ein Problem",
+      "pronunciation": "ess gipt ine pro-BLEM",
+      "translation": "There is a problem"
+    }
+  ],
+
+  "vocabulary": [
+    {
+      "slotKey": "thing",
+      "text": "Zimmer",
+      "pronunciation": "TSIM-mer",
+      "englishMeaning": "room"
+    }
+  ]
+}

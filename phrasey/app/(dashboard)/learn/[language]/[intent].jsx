@@ -1,5 +1,5 @@
 import { StyleSheet, FlatList, Pressable, useColorScheme } from "react-native"
-import { useLocalSearchParams, useRouter } from "expo-router"
+import { useRouter } from "expo-router"
 import { Ionicons } from "@expo/vector-icons"
 
 import { useLearn } from "../../../../hooks/useLearn"
@@ -11,7 +11,7 @@ import ThemedView from "../../../../components/ThemedView"
 import Spacer from "../../../../components/Spacer"
 import ThemedCard from "../../../../components/ThemedCard"
 
-import seed from "../../../../data/seed.json"
+import seed from "../../../../data/seed/seed.json"
 
 const IntentDetails = () => {
     const colorScheme = useColorScheme()

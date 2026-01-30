@@ -1,0 +1,51 @@
+{
+  "id": "hk_accommodation",
+  "language": "hk",
+  "category": "ACCOMMODATION",
+
+  "intents": [1, 5, 10],
+
+  "sentence_frames": [
+    {
+      "id": "hk_acc_1",
+      "intentId": 1,
+      "template": "我有預訂",
+      "pronunciation": "ngo5 jau5 jyu6 ding6",
+      "translation": "I have a reservation",
+      "audioRef": "hk/accommodation/sentences/reservation"
+    },
+    {
+      "id": "hk_acc_2",
+      "intentId": 5,
+      "template": "有冇房？",
+      "pronunciation": "jau5 mou5 fong4?",
+      "translation": "Is there a room available?",
+      "audioRef": "hk/accommodation/sentences/available"
+    },
+    {
+      "id": "hk_acc_3",
+      "intentId": 10,
+      "template": "間房有問題",
+      "pronunciation": "gaan1 fong4 jau5 man6 tai4",
+      "translation": "There is a problem with the room",
+      "audioRef": "hk/accommodation/sentences/problem"
+    }
+  ],
+
+  "vocabulary": [
+    {
+      "slotKey": "thing",
+      "text": "房",
+      "pronunciation": "fong4",
+      "englishMeaning": "room",
+      "audioRef": "hk/accommodation/vocab/room"
+    },
+    {
+      "slotKey": "thing",
+      "text": "鎖匙",
+      "pronunciation": "so2 si4",
+      "englishMeaning": "key",
+      "audioRef": "hk/accommodation/vocab/key"
+    }
+  ]
+}
